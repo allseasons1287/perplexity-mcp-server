@@ -1,0 +1,6 @@
+# This machine has core.autocrlf=true. Without this file, editing start.sh on
+# Windows commits CRLF line endings, and the container then fails to boot with
+# a misleading "no such file or directory" — the kernel reads the shebang as
+# "/bin/sh\r". Force LF for anything the Linux container executes or parses.
+*.sh        text eol=lf
+Dockerfile  text eol=lf
